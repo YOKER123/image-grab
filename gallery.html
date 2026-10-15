@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>图提取 · 图片预览</title>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+  <!-- 顶部工具栏 -->
+  <header class="topbar">
+    <div class="topbar__left">
+      <h1 class="topbar__title">
+        <span class="logo" aria-hidden="true">图</span>
+        图提取
+      </h1>
+      <p class="topbar__sub" id="pageInfo">正在读取提取结果…</p>
+    </div>
+
+    <div class="topbar__right">
+      <span class="counter">已选 <strong id="selectedCount">0</strong> / <span id="totalCount">0</span></span>
+      <button class="btn btn--ghost" id="selectAll" type="button">全选</button>
+      <button class="btn btn--ghost" id="invertSelect" type="button">反选</button>
+      <button class="btn btn--ghost" id="clearSelect" type="button">清空</button>
+      <button class="btn btn--primary" id="downloadBtn" type="button">下载选中</button>
+    </div>
+  </header>
+
+  <!-- 下载进度条 -->
+  <div class="progress" id="progress" hidden>
+    <div class="progress__bar"><span id="progressFill"></span></div>
+    <p class="progress__text" id="progressText">准备中…</p>
+  </div>
+
+  <!-- 图片网格 -->
+  <main class="grid" id="grid"></main>
+
+  <!-- 空状态 -->
+  <div class="empty" id="empty" hidden>
+    <p class="empty__title">还没有提取到图片</p>
+    <p class="empty__desc">请回到电商详情页，点击右下角「获取图片」按钮。</p>
+  </div>
+
+  <!-- 结果提示 -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
