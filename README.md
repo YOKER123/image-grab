@@ -44,6 +44,25 @@ image-grab/
 项目官网位于 `docs/` 文件夹，纯静态站点，通过 GitHub Pages 发布：
 https://yoker123.github.io/image-grab/
 
+## 推送到 GitHub（一键脚本）
+
+项目已初始化 git 仓库并完成首次提交，在项目根目录执行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\push-to-github.ps1
+```
+
+脚本会自动完成：验证令牌 → 创建 `image-grab` 仓库 → 推送 `main` 分支 → 开启 GitHub Pages（分支 `main` + 目录 `/docs`）→ 打印线上地址。
+令牌仅在当次运行使用，不会写入 `.git/config`，不会随仓库泄露。
+
+手动操作则等价于：
+
+```bash
+git remote add origin https://github.com/YOKER123/image-grab.git
+git push -u origin main
+# 然后在仓库 Settings → Pages 中，Source 选 main、目录选 /docs
+```
+
 ## 开源协议
 
 MIT
