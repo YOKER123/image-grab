@@ -63,6 +63,17 @@ git push -u origin main
 # 然后在仓库 Settings → Pages 中，Source 选 main、目录选 /docs
 ```
 
+## 后续更新推送
+
+```bash
+git add .
+git commit -m "更新说明"
+git push
+```
+
+> 说明：本机访问 GitHub 需要走本地代理，仓库已配置 `git config http.proxy http://127.0.0.1:7890`。
+> 若代理端口有变或不再需要，用 `git config --unset http.proxy` 移除该配置即可。
+
 ## 开源协议
 
 MIT
